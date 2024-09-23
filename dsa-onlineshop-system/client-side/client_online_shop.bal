@@ -46,7 +46,7 @@ public function main() returns error? {
         _ = io:readln();
     }
 }
-
+// Function to print the main menu of the NUST Online Shopping System.
 function printMenu() {
     io:println("======================================");
     io:println("      NUST Online Shopping System");
