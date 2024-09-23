@@ -15,7 +15,7 @@ public isolated client class onlineShoppingClient {
         check self.grpcClient.initStub(self, ONLINE_SHOPPING_DESC);
     }
 
-    isolated remote function addProduct(Product|ContextProduct req) returns ProductResponse|grpc:Error {
+isolated remote function addProduct(Product|ContextProduct req) returns ProductResponse|grpc:Error {
         map<string|string[]> headers = {};
         Product message;
         if req is ContextProduct {
