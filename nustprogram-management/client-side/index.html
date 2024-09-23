@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Programme Management</h1>
+
+        <!-- Add Programme Form -->
+        <h2>Add Programme</h2>
+        <form id="add-programme-form">
+            <input type="text" id="code" placeholder="Programme Code" required>
+            <input type="text" id="nqf_level" placeholder="NQF Level" required>
+            <input type="text" id="fac" placeholder="Faculty" required>
+            <input type="text" id="qual_title" placeholder="Qualification Title" required>
+            <input type="text" id="reg_date" placeholder="Registration Date" required>
+            <h4>Courses</h4>
+            <input type="text" id="course_name" placeholder="Course Name" required>
+            <input type="text" id="course_code" placeholder="Course Code" required>
+            <input type="text" id="course_nqf" placeholder="Course NQF Level" required>
+            <button type="submit">Add Programme</button>
+        </form>
+
+        <!-- List of Programmes -->
+        <h2>Programmes List</h2>
+        <table id="programmes-table">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>NQF Level</th>
+                    <th>Faculty</th>
+                    <th>Title</th>
+                    <th>Reg Date</th>
+                    <th>Courses</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Update/Delete Programme Form -->
+        <h2>Update Programme</h2>
+        <form id="update-programme-form">
+            <input type="text" id="update-code" placeholder="Programme Code" required>
+            <input type="text" id="update-nqf_level" placeholder="NQF Level" required>
+            <input type="text" id="update-fac" placeholder="Faculty" required>
+            <input type="text" id="update-qual_title" placeholder="Qualification Title" required>
+            <input type="text" id="update-reg_date" placeholder="Registration Date" required>
+            <button type="submit">Update Programme</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

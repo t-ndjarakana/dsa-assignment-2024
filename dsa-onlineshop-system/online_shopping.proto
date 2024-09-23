@@ -1,0 +1,73 @@
+syntax = "proto3";
+package OnlineShopping;
+import "google/protobuf/empty.proto";
+//model for remote procedure calls
+service OnlineShoppingRESTStyle {
+    rpc CreateProduct (Product) returns (ProductResponse);
+    rpc GetProduct (GetProductRequest) returns (Product);
+    rpc UpdateProduct (Product) returns (ProductResponse);
+    rpc DeleteProduct (DeleteProductRequest) returns (ProductResponse);
+    rpc ListProducts (google.protobuf.Empty) returns (stream Product);
+    rpc SearchProducts (SearchProductsRequest) returns (stream Product);
+    rpc AddToCart (AddToCartRequest) returns (CartResponse);
+    rpc PlaceOrder (PlaceOrderRequest) returns (OrderResponse);
+    rpc CreateUser (User) returns (UserResponse);
+}
+
+//model for client respoose
+
+message Product {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    double price = 4;
+    int32 quantity = 5;
+    string category = 6;
+}
+
+message ProductResponse {
+    string message = 1;
+    Product product = 2;
+}
+
+message GetProductRequest {
+    string id = 1;
+}
+
+message DeleteProductRequest {
+    string id = 1;
+}
+
+message SearchProductsRequest {
+    string query = 1;
+}
+
+message AddToCartRequest {
+    string user_id = 1;
+    string product_id = 2;
+    int32 quantity = 3;
+}
+
+message CartResponse {
+    string message = 1;
+}
+
+message PlaceOrderRequest {
+    string user_id = 1;
+}
+
+message OrderResponse {
+    string order_id = 1;
+    string message = 2;
+}
+
+message User {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+}
+
+message UserResponse {
+    string message = 1;
+    User user = 2;
+}
