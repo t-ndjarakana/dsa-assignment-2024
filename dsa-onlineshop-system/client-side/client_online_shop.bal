@@ -62,8 +62,10 @@ function printMenu() {
     io:println("9. Exit");
     io:println("======================================");
 }
-
+// Function to add a product to the system by reading user input.
 function addProduct() returns error? {
+// Define a record type to represent the product, with fields for ID, name, description,
+// price, quantity, and status. The `id` field is marked as `readonly`.
     record {|
         readonly string id;
         string name;
@@ -72,11 +74,15 @@ function addProduct() returns error? {
         int quantity;
         string status;
     |} product = {
+// Collect user input for each field and populate the product record.
         id: io:readln("Enter product ID: "),
         name: io:readln("Enter product name: "),
         description: io:readln("Enter product description: "),
+  // Convert the price input (string) to a decimal. `check` ensures error handling.
         price: check decimal:fromString(io:readln("Enter product price: ")),
+  // Convert the quantity input (string) to an integer. `check` ensures error handling.
         quantity: check int:fromString(io:readln("Enter product quantity: ")),
+   // Read the product status (e.g., Available or Out of Stock).
         status: io:readln("Enter product status (Available/Out of Stock): ")
     };
 
