@@ -14,6 +14,7 @@ public isolated client class onlineShoppingClient {
         self.grpcClient = check new (url, config);
         check self.grpcClient.initStub(self, ONLINE_SHOPPING_DESC);
     }
+// Isolated remote function to add a product via gRPC. It accepts either a `Product` or `ContextProduct`
 
     isolated remote function addProduct(Product|ContextProduct req) returns ProductResponse|grpc:Error {
         map<string|string[]> headers = {};
